@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=BaseDeDatos;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: Tu_Password_Fuerte_123
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServerDialect
+      database: sql_server
+
+server:
+  port: 8088
+
