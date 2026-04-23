@@ -1,6 +1,5 @@
 package com.safco_peru.Prueba.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.safco_peru.Prueba.entity.enums.TipoEspacio;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,10 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,7 +15,7 @@ import java.util.Set;
 @Entity
 @SuperBuilder
 @Table(name = "ubicacion")
-public class UbicacionContenedor {
+public class Ubicacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

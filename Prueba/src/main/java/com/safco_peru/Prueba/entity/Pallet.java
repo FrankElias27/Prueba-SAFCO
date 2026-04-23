@@ -1,6 +1,5 @@
 package com.safco_peru.Prueba.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +8,6 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -32,7 +29,7 @@ public class Pallet {
     private LocalDateTime fechaCreacion;
 
     @OneToOne(mappedBy = "pallet",fetch = FetchType.LAZY)
-    private UbicacionContenedor ubicacionContenedor;
+    private Ubicacion ubicacion;
 
     @PrePersist
     protected void onCreate() {

@@ -33,7 +33,7 @@ public class Contenedor {
 
     @OneToMany(mappedBy = "contenedor",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonIgnore
-    private Set<UbicacionContenedor> ubicaciones  = new HashSet<>();
+    private Set<Ubicacion> ubicaciones  = new HashSet<>();
 
     @PrePersist
     protected void onCreate() {
