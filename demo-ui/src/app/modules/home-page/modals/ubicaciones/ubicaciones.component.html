@@ -1,0 +1,14 @@
+<div class="grid">
+  <div
+    *ngFor="let asiento of asientos"
+    class="asiento"
+    [ngClass]="getAsientoClass(asiento)"
+  >
+    <div>{{ asiento.numero }}</div>
+
+    <small *ngIf="asiento.nombrePallet">
+      {{ asiento.nombrePallet }}
+    </small>
+
+  </div>
+</div>

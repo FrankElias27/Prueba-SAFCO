@@ -1,0 +1,45 @@
+services:
+
+  keycloak:
+    container_name: keycloak-safco
+    image: quay.io/keycloak/keycloak:26.0.0
+    ports:
+      - 9090:8080
+    depends_on:
+      - postgres-keycloak
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres-keycloak:5432/keycloak
+      KC_DB_USERNAME: admin
+      KC_DB_PASSWORD: admin
+      KC_HOSTNAME_STRICT: false
+    networks:
+      - safco
+    command:
+      - start-dev
+
+  postgres-keycloak:
+    container_name: postgres-sql-keycloak
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: keycloak
+    volumes:
+      - postgres-keycloak:/var/lib/postgresql/data
+      - ./init-db/initKeycloak.sql:/docker-entrypoint-initdb.d/initKeycloak.sql
+    ports:
+      - 5435:5432
+    networks:
+      - safco
+    restart: unless-stopped
+
+networks:
+  safco:
+    driver: bridge
+
+volumes:
+  postgres-keycloak:
+    driver: local

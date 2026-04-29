@@ -1,0 +1,41 @@
+
+.mat-mdc-table {
+  background-color: #f0f0f0;
+}
+
+.mat-mdc-row {
+  background-color: #ffffff;
+}
+
+.mat-mdc-row:hover {
+  background-color: #e0e0e0;
+}
+
+.mat-mdc-header-row {
+  background-color: #ffffff;
+}
+
+.mat-mdc-cell {
+  background-color: #ffffff;
+}
+
+/* Aumenta el espacio dentro del dropdown del paginator */
+::ng-deep .mat-mdc-paginator-touch-target {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  min-width: 3rem;
+  height: 40px;
+}
+
+.boton {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    padding: 4px 10px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+.boton mat-icon {
+    margin-right: 5px;
+  }
